@@ -7,7 +7,7 @@ CREATE DATABASE IF NOT EXISTS alx_book_store;
 );
 
 CREATE TABLE Books (
-    book_id serial primary key,
+    book_id PRIMARY KEY,
     title VARCHAR(130),
     author_id integer references Authors(author_id),
     price DOUBLE,
@@ -15,19 +15,19 @@ CREATE TABLE Books (
 );
 
 CREATE TABLE Authors (
-    author_id serial primary key,
+    author_id PRIMARY KEY,
     author_name VARCHAR(215)
 );
 
 CREATE TABLE Customers (
-    customer_id serial primary key,
+    customer_id PRIMARY KEY,
     customer_name VARCHAR(215),
     email VARCHAR(215),
     address TEXT
 );
 
 CREATE TABLE Orders (
-    order_id serial primary key,
+    order_id PRIMARY KEY,
     customer_id integer references Customers(customer_id),
     order_date DATE
 );
