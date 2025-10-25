@@ -34,8 +34,10 @@ CREATE TABLE Orders (
 );
 
 CREATE TABLE Order_Details (
-   orderdetailid serial primary key,
-   order_id integer references Orders(order_id),
-   book_id integer references Books(book_id),
-   quantity double
+    order_id INT NOT NULL,
+    book_id INT NOT NULL,
+    quantity INT NOT NULL,
+    PRIMARY KEY (order_id, book_id),
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
