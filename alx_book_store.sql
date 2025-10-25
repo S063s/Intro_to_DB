@@ -27,9 +27,10 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Orders (
-    order_id PRIMARY KEY,
+    order_id serial primary key,
     customer_id integer references Customers(customer_id),
-    order_date DATE
+    order_date DATE NOT NULL,
+    FOREIGN KEY (customer_id) references Customers(customer_id)
 );
 
 CREATE TABLE Order_Details (
