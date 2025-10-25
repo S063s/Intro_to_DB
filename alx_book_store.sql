@@ -27,10 +27,10 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Orders (
-    order_id serial primary key,
-    customer_id integer references Customers(customer_id),
+    order_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
     order_date DATE NOT NULL,
-    FOREIGN KEY (customer_id) references Customers(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 CREATE TABLE Order_Details (
